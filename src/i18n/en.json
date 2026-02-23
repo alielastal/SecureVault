@@ -1,0 +1,66 @@
+{
+  "app": {
+    "name": "SecureVault",
+    "tagline": "Your encrypted digital vault"
+  },
+  "auth": {
+    "setup_title": "Create Master Password",
+    "setup_desc": "This password will be used to encrypt all your data. Make sure it's strong and memorable.",
+    "unlock_title": "Unlock Vault",
+    "unlock_desc": "Enter your master password to access your vault.",
+    "password": "Master Password",
+    "confirm_password": "Confirm Password",
+    "create": "Create Vault",
+    "unlock": "Unlock",
+    "passwords_mismatch": "Passwords don't match",
+    "wrong_password": "Wrong password. Please try again.",
+    "min_length": "Password must be at least 8 characters"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "files": "Files",
+    "notes": "Notes",
+    "lock": "Lock Vault"
+  },
+  "dashboard": {
+    "welcome": "Welcome to SecureVault",
+    "encrypted_files": "Encrypted Files",
+    "secure_notes": "Secure Notes",
+    "quick_actions": "Quick Actions",
+    "upload_file": "Upload File",
+    "new_note": "New Note"
+  },
+  "files": {
+    "title": "Encrypted Files",
+    "upload": "Upload & Encrypt",
+    "no_files": "No encrypted files yet",
+    "no_files_desc": "Upload files to encrypt and store them securely.",
+    "size": "Size",
+    "date": "Date",
+    "download": "Download",
+    "delete": "Delete",
+    "confirm_delete": "Are you sure you want to delete this file?",
+    "uploading": "Encrypting...",
+    "deleting": "Deleting..."
+  },
+  "notes": {
+    "title": "Secure Notes",
+    "new": "New Note",
+    "no_notes": "No secure notes yet",
+    "no_notes_desc": "Create notes that are encrypted and stored securely.",
+    "title_placeholder": "Note title...",
+    "content_placeholder": "Write your secure note here...",
+    "save": "Save",
+    "saving": "Saving...",
+    "delete": "Delete",
+    "confirm_delete": "Are you sure you want to delete this note?",
+    "back": "Back"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "language": "Language"
+  }
+}
