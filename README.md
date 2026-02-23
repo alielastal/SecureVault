@@ -1,73 +1,151 @@
-# React + TypeScript + Vite
+<p align="center">
+  <img src="assets/logo.svg" alt="SecureVault Logo" width="120" height="120">
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">SecureVault</h1>
 
-Currently, two official plugins are available:
+<p align="center">
+  <strong>Encrypted File Storage & Secure Notes</strong><br>
+  <em>تخزين ملفات مشفرة وملاحظات آمنة</em>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <img src="https://img.shields.io/badge/Tauri-2.0-blue?logo=tauri" alt="Tauri 2.0">
+  <img src="https://img.shields.io/badge/React-19-61dafb?logo=react" alt="React 19">
+  <img src="https://img.shields.io/badge/Rust-backend-orange?logo=rust" alt="Rust">
+  <img src="https://img.shields.io/badge/TypeScript-frontend-3178c6?logo=typescript" alt="TypeScript">
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="MIT License">
+</p>
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## About | نبذة عن التطبيق
 
-## Expanding the ESLint configuration
+**SecureVault** is a cross-platform desktop application for securely storing encrypted files and private notes. Built with military-grade **AES-256-GCM** encryption and **Argon2id** key derivation, your data stays protected behind a single master password.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**SecureVault** هو تطبيق سطح مكتب متعدد المنصات لتخزين الملفات المشفرة والملاحظات الخاصة بشكل آمن. مبني بتشفير **AES-256-GCM** واشتقاق مفاتيح **Argon2id**، بياناتك محمية بكلمة مرور رئيسية واحدة.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Features | المميزات
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Feature | الميزة |
+|---------|--------|
+| AES-256-GCM file encryption | تشفير الملفات بـ AES-256-GCM |
+| Secure notes with encrypted content | ملاحظات آمنة بمحتوى مشفر |
+| Master password with Argon2id hashing | كلمة مرور رئيسية مع تجزئة Argon2id |
+| Arabic & English interface | واجهة عربية وإنجليزية |
+| RTL layout support | دعم التخطيط من اليمين لليسار |
+| Dark theme | سمة داكنة |
+| Offline — no internet required | يعمل بدون إنترنت |
+| Cross-platform (Linux, Windows, macOS) | متعدد المنصات |
+
+---
+
+## Tech Stack | التقنيات المستخدمة
+
+| Layer | Technology |
+|-------|-----------|
+| **Framework** | [Tauri 2.0](https://v2.tauri.app/) |
+| **Frontend** | React 19 + TypeScript |
+| **Backend** | Rust |
+| **Encryption** | AES-256-GCM + Argon2id |
+| **Database** | SQLite (rusqlite) |
+| **Styling** | TailwindCSS v4 |
+| **State** | Zustand |
+| **i18n** | react-i18next |
+| **Build Tool** | Vite 7 |
+
+---
+
+## Screenshots | لقطات الشاشة
+
+> _Coming soon..._
+
+---
+
+## Getting Started | البدء
+
+### Prerequisites | المتطلبات
+
+- **Node.js** >= 18
+- **Rust** (stable toolchain)
+- **System dependencies** (Linux):
+  ```bash
+  sudo apt install libwebkit2gtk-4.1-dev build-essential libssl-dev libayatana-appindicator3-dev librsvg2-dev
+  ```
+
+### Installation | التثبيت
+
+```bash
+# Clone the repository
+git clone https://github.com/alielastal/SecureVault.git
+cd SecureVault
+
+# Install dependencies
+npm install
+
+# Run in development mode
+npm run tauri dev
+
+# Build for production
+npm run tauri build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Project Structure | هيكل المشروع
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+SecureVault/
+├── src/                    # React Frontend
+│   ├── components/         # UI components (Sidebar, Layout)
+│   ├── features/           # Feature modules
+│   │   ├── auth/           # Master password & dashboard
+│   │   ├── files/          # Encrypted file management
+│   │   └── notes/          # Secure notes editor
+│   ├── i18n/               # Arabic & English translations
+│   ├── stores/             # Zustand state management
+│   └── lib/                # Tauri IPC wrappers
+│
+├── src-tauri/              # Rust Backend
+│   └── src/
+│       ├── commands/       # Tauri IPC commands
+│       ├── services/       # Crypto, Database, Storage
+│       └── models/         # Data structures
+```
+
+---
+
+## How It Works | كيف يعمل
+
+1. **Setup** — Create a master password on first launch
+2. **Unlock** — Enter your master password to access the vault
+3. **Encrypt Files** — Upload any file to encrypt and store it securely
+4. **Secure Notes** — Write private notes that are encrypted at rest
+5. **Decrypt** — Access your files and notes anytime with your master password
+
+```
+Master Password → Argon2id → 256-bit Key → AES-256-GCM → Encrypted Data
+```
+
+---
+
+## Security | الأمان
+
+- **AES-256-GCM** — Authenticated encryption with unique nonce per item
+- **Argon2id** — Memory-hard password hashing resistant to GPU/ASIC attacks
+- **No cloud** — All data stays on your device
+- **No telemetry** — Zero data collection
+
+---
+
+## License | الرخصة
+
+This project is licensed under the MIT License.
+
+---
+
+<p align="center">
+  Made with Rust & React
+</p>
